@@ -1,19 +1,24 @@
-namespace denemeVT
-{
-    public partial class Form1 : Form
-    {
-        public Form1()
-        {
-            InitializeComponent();
-        }
+namespace denemeVT;
+using System.Data.SqlClient; // kod kutuphanesi
 
-        private void logoutButton_Click(object sender, EventArgs e)
+public partial class Form1 : Form
+{
+    public Form1()
+    {
+        InitializeComponent();
+    }
+
+    private void logoutButton_Click(object sender, EventArgs e)
+    {
+        DialogResult approve = MessageBox.Show("Are you suree to logout?", "Logout Process", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        if (approve == DialogResult.Yes)
         {
-            DialogResult approval = MessageBox.Show("Are you sure to logout?", "Logout Process", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(approval == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+            Application.Exit();
         }
+    }
+
+    private void loginButton_Click(object sender, EventArgs e)
+    {
+       
     }
 }
